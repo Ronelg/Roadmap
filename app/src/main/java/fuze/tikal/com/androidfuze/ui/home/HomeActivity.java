@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import fuze.tikal.com.androidfuze.R;
+import fuze.tikal.com.androidfuze.data.source.RoadmapRepository;
 import fuze.tikal.com.androidfuze.utils.ActivityUtils;
 
 public class HomeActivity extends AppCompatActivity {
@@ -21,5 +22,7 @@ public class HomeActivity extends AppCompatActivity {
             ActivityUtils.addFragmentToActivity(
                 getSupportFragmentManager(), homeFragment, R.id.container);
         }
+
+        RoadmapRepository.getInstance();
     }
 }
