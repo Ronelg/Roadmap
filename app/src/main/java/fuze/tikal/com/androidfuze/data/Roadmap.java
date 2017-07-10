@@ -1,14 +1,10 @@
 package fuze.tikal.com.androidfuze.data;
 
 
-<<<<<<< HEAD
-import java.util.List;
-=======
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
->>>>>>> master
 
 /**
  * Created by ronelg on 7/10/17.
@@ -72,17 +68,7 @@ public class Roadmap {
         return status;
     }
 
-<<<<<<< HEAD
-    public enum Status {PUBLISHED, DRAFT};
-
-    private int version;
-    private Status status;
-
-    private List<Step> steps;
-
-=======
     public void setStatus(String status) {
         this.status = status;
     }
->>>>>>> master
 }
