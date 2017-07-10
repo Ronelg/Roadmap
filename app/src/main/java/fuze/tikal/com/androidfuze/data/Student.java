@@ -8,5 +8,5 @@ import java.util.List;
 
 public class Student {
 
-    private List<Roadmap> roadmaps;
+    private List<StudentRoadmap> roadmaps;
 }
