@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import fuze.tikal.com.androidfuze.R;
 
 
-public class HomeFragment extends Fragment implements HomeContract.View {
+//This fragment not in use as HomeActivity will be used as View!
+
+public class HomeFragment extends Fragment  {
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -23,15 +25,5 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         return v;
-    }
-
-    @Override
-    public void setPresenter(HomeContract.Presenter presenter) {
-
-    }
-
-    @Override
-    public void setProgressIndicator(boolean active) {
-
     }
 }
