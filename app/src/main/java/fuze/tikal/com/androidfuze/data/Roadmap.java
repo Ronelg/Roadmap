@@ -2,15 +2,16 @@ package fuze.tikal.com.androidfuze.data;
 
 
 import java.net.URL;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by ronelg on 7/10/17.
  */
 
 public class Roadmap {
+    private int id;
     private URL baseRepoUrl;
 
     private String version;
@@ -20,9 +21,17 @@ public class Roadmap {
      * key: stage name
      * value: content of the stage, can be free text description, video URL or other content
      */
-    private Map<String, RoadmapStepContent> steps = new HashMap<>();
+    private Map<Integer, Step> steps = new HashMap<>();
     private String title;
     private String desctiprion;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public URL getBaseRepoUrl() {
         return baseRepoUrl;
@@ -32,12 +41,12 @@ public class Roadmap {
         this.baseRepoUrl = baseRepoUrl;
     }
 
-    public Set<String> getSteps() {
-        return steps.keySet();
+    public Collection<Step> getSteps() {
+        return steps.values();
     }
 
-    public void adStep(String name, RoadmapStepContent content) {
-        steps.put(name, content);
+    public void adStep(Step content) {
+        steps.put(content.getId(), content);
     }
 
     public String getTitle() {

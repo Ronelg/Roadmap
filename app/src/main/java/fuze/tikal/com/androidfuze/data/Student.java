@@ -1,5 +1,7 @@
 package fuze.tikal.com.androidfuze.data;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -7,6 +9,23 @@ import java.util.List;
  */
 
 public class Student {
+    private int id;
+    private List<StudentRoadmap> roadmaps = new ArrayList<>();
 
-    private List<StudentRoadmap> roadmaps;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<StudentRoadmap> getRoadmaps() {
+        return Collections.unmodifiableList(roadmaps);
+    }
+
+    public void adRoadmap(StudentRoadmap r) {
+        roadmaps.add(r);
+    }
 }
