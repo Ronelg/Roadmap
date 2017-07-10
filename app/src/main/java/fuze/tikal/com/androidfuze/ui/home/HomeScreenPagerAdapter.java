@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import fuze.tikal.com.androidfuze.ui.author.AuthorTabFragment;
+import fuze.tikal.com.androidfuze.ui.student.StudentTabFragment;
+import fuze.tikal.com.androidfuze.ui.tutor.TutorTabFragment;
+
 /**
  * Created by motibartov on 10/07/2017.
  */
@@ -11,17 +15,31 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 public class HomeScreenPagerAdapter extends FragmentStatePagerAdapter{
 
 
-    public HomeScreenPagerAdapter(FragmentManager fm) {
+    private final int mNumOfTabs;
+
+    public HomeScreenPagerAdapter(FragmentManager fm, int numOfTabs) {
         super(fm);
+        mNumOfTabs = numOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        switch (position) {
+            case 0:
+                return AuthorTabFragment.newInstance(null, null);
+            case 1:
+
+                return TutorTabFragment.newInstance(null, null);
+            case 2:
+
+                return StudentTabFragment.newInstance(null, null);
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return mNumOfTabs;
     }
 }
