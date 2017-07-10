@@ -30,6 +30,8 @@ public class MockRoadmapRepository extends RoadmapRepository {
         studentRoadmap.setBaseRoadmap(getRoadmap(1));
         studentRoadmap.setId(3);
         student.setId(4);
+        student.setFirstName("Tikal");
+        student.setSecondName("Superstar");
         student.adRoadmap(studentRoadmap);
 
         addStudent(student);

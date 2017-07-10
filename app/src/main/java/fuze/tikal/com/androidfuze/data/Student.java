@@ -10,6 +10,9 @@ import java.util.List;
 
 public class Student {
     private int id;
+
+    private String firstName;
+    private String secondName;
     private List<StudentRoadmap> roadmaps = new ArrayList<>();
 
 
@@ -27,5 +30,21 @@ public class Student {
 
     public void adRoadmap(StudentRoadmap r) {
         roadmaps.add(r);
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 }
