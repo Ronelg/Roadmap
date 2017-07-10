@@ -7,7 +7,7 @@ import fuze.tikal.com.androidfuze.ui.BasePresenter;
 import fuze.tikal.com.androidfuze.ui.BaseView;
 
 /**
- * Created by asafvaron on 10/07/2017.
+ * Created by asafvaron on  a;klsjdlkajsdljkasdkjl 10/07/2017.
  */
 
 interface AuthorContract {
