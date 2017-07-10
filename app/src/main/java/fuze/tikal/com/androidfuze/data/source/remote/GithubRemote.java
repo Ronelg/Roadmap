@@ -68,5 +68,14 @@ public class GithubRemote {
         }
     }
 
+    public GithubUser user() {
+        Call<GithubUser> call = github.user();
+        try {
+            return call.execute().body();
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
 
 }

@@ -16,6 +16,7 @@ import fuze.tikal.com.androidfuze.R;
 import fuze.tikal.com.androidfuze.data.source.GithubOauth;
 import fuze.tikal.com.androidfuze.data.source.remote.GithubRemote;
 import fuze.tikal.com.androidfuze.data.source.remote.GithubRepository;
+import fuze.tikal.com.androidfuze.data.source.remote.GithubUser;
 
 
 public class HomeFragment extends Fragment {
@@ -63,6 +64,10 @@ public class HomeFragment extends Fragment {
                         for(GithubRepository repo: repos) {
                             Log.d(TAG, repo.getFullName());
                         }
+
+                        GithubUser user = github.user();
+                        Log.d(TAG, user.getName() + " id=" + user.getId());
+
                     }
                 }).start();
 
