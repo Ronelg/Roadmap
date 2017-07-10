@@ -35,8 +35,15 @@ public class AuthorRoadMapAdapter extends RecyclerView.Adapter<AuthorRoadMapAdap
 
     @Override
     public void onBindViewHolder(RoadMapCardViewHolder holder, int position) {
-        Roadmap roadmap = mData.get(position);
+        final Roadmap roadmap = mData.get(position);
         holder.bind(roadmap);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onRoadMapClicked(roadmap);
+            }
+        });
     }
 
     @Override
