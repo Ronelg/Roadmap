@@ -21,6 +21,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        all{
+            buildConfigField 'String', 'GITHUB_ID', "\"de5e41ea4971897ff44b\""
+            buildConfigField 'String', 'GITHUB_SECRET', "\"25eccdc101a11376db6beff2632e546b7c38e0ed\""
+        }
     }
 }
 
@@ -29,6 +33,7 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation "com.android.support:cardview-v7:$support_version"
@@ -54,4 +59,11 @@ dependencies {
     implementation "io.reactivex:rxjava:$rxjava_version"
     implementation "io.reactivex:rxandroid:$rxandroid_version"
     implementation "com.squareup.sqlbrite:sqlbrite:$sqlbrite_version"
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    compile 'com.squareup.moshi:moshi:1.5.0'
+
+
 }
