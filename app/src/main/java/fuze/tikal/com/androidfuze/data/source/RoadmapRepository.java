@@ -2,14 +2,19 @@ package fuze.tikal.com.androidfuze.data.source;
 
 import android.support.annotation.NonNull;
 import fuze.tikal.com.androidfuze.data.Roadmap;
+import fuze.tikal.com.androidfuze.di.Local;
+import fuze.tikal.com.androidfuze.di.Remote;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import rx.Observable;
 import rx.functions.Func1;
 
 import static dagger.internal.Preconditions.checkNotNull;
 
+@Singleton
 public class RoadmapRepository implements RoadmapDataSource {
 
     private static RoadmapRepository INSTANCE = null;
@@ -22,18 +27,11 @@ public class RoadmapRepository implements RoadmapDataSource {
 
     boolean mCacheIsDirty = false;
 
-    public static RoadmapRepository getInstance(@NonNull RoadmapDataSource roadmapRemoteDataSource,
-        @NonNull RoadmapDataSource roadmapLocalDataSource) {
-        if (INSTANCE == null) {
-            INSTANCE = new RoadmapRepository(roadmapRemoteDataSource, roadmapLocalDataSource);
-        }
-        return INSTANCE;
-    }
-
-    private RoadmapRepository(@NonNull RoadmapDataSource roadmapRemoteDataSource,
-        @NonNull RoadmapDataSource roadmapLocalDataSource) {
-        mRoadmapRemoteDataSource = checkNotNull(roadmapRemoteDataSource);
-        mRoadmapLocalDataSource = checkNotNull(roadmapLocalDataSource);
+    @Inject
+    public RoadmapRepository(@Remote RoadmapDataSource roadmapRemoteDataSource,
+        @Local RoadmapDataSource roadmapLocalDataSource) {
+        mRoadmapRemoteDataSource = roadmapRemoteDataSource;
+        mRoadmapLocalDataSource = roadmapLocalDataSource;
     }
 
     @Override

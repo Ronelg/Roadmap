@@ -8,11 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import fuze.tikal.com.androidfuze.R;
 
-
 public class HomeFragment extends Fragment implements HomeContract.View {
+
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
+    }
+
+    public HomeFragment() {
+        // Requires empty public constructor
     }
 
     @Nullable

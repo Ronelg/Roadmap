@@ -3,28 +3,29 @@ package fuze.tikal.com.androidfuze.data.source.remote;
 import android.support.annotation.NonNull;
 import fuze.tikal.com.androidfuze.data.Roadmap;
 import fuze.tikal.com.androidfuze.data.source.RoadmapDataSource;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import rx.Observable;
 
 @Singleton
 public class RoadmapRemoteDataSource implements RoadmapDataSource {
 
-    private static RoadmapRemoteDataSource INSTANCE;
+    private static final int SERVICE_LATENCY_IN_MILLIS = 5000;
 
-    public static RoadmapRemoteDataSource getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new RoadmapRemoteDataSource();
-        }
-        return INSTANCE;
+    private final static Map<String, Roadmap> ROADMAPS_SERVICE_DATA;
+
+    static {
+        ROADMAPS_SERVICE_DATA = new LinkedHashMap<>(2);
     }
 
-    // Prevent direct instantiation.
-    private RoadmapRemoteDataSource() {}
+    public RoadmapRemoteDataSource() {}
 
     @Override
     public Observable<List<Roadmap>> getRoadmaps() {
-        return null;
+        return Observable.from(ROADMAPS_SERVICE_DATA.values()).toList();
     }
 
     @Override

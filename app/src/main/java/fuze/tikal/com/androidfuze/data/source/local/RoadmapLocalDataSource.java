@@ -1,11 +1,13 @@
 package fuze.tikal.com.androidfuze.data.source.local;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import fuze.tikal.com.androidfuze.data.Roadmap;
 import fuze.tikal.com.androidfuze.data.source.RoadmapDataSource;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import rx.Observable;
 
@@ -18,14 +20,8 @@ public class RoadmapLocalDataSource implements RoadmapDataSource {
     private Map<String, Roadmap> roadmaps = new LinkedHashMap<>();
 
 
-    public static RoadmapLocalDataSource getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new RoadmapLocalDataSource();
-        }
-        return INSTANCE;
-    }
-
-    private RoadmapLocalDataSource() {
+    @Inject
+    public RoadmapLocalDataSource(@NonNull Context context) {
     }
 
     @Override
