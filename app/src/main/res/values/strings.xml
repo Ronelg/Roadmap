@@ -4,4 +4,7 @@
     <string name="temp_roadmap_desc">Sheker sheker sheker</string>
     <string name="temp_roadmap_state">PUBLISHED</string>
     <string name="no_active_roadmaps">No Active RoadMaps</string>
+    <string name="rating">Rating</string>
+    <string name="num_of_students">Number of students %d</string>
+    <string name="num_of_graduates">Number of graduates %d</string>
 </resources>
