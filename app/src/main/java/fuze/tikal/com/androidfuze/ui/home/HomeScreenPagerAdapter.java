@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import fuze.tikal.com.androidfuze.ui.author.AuthorTabFragment;
+import fuze.tikal.com.androidfuze.ui.author.AuthorFragment;
 import fuze.tikal.com.androidfuze.ui.student.StudentTabFragment;
 import fuze.tikal.com.androidfuze.ui.tutor.TutorTabFragment;
 
@@ -26,13 +26,11 @@ public class HomeScreenPagerAdapter extends FragmentStatePagerAdapter{
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return AuthorTabFragment.newInstance(null, null);
+                return AuthorFragment.newInstance();
             case 1:
-
-                return TutorTabFragment.newInstance(null, null);
+                return TutorTabFragment.newInstance();
             case 2:
-
-                return StudentTabFragment.newInstance(null, null);
+                return StudentTabFragment.newInstance();
             default:
                 return null;
         }

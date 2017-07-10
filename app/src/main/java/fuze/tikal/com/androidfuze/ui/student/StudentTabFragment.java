@@ -11,30 +11,12 @@ import android.view.ViewGroup;
 import fuze.tikal.com.androidfuze.R;
 
 public class StudentTabFragment extends Fragment implements StudentContract.View{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
 
     public StudentTabFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StudentTabFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StudentTabFragment newInstance(String param1, String param2) {
+    public static StudentTabFragment newInstance() {
         StudentTabFragment fragment = new StudentTabFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -53,10 +35,6 @@ public class StudentTabFragment extends Fragment implements StudentContract.View
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_student_tab, container, false);
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
     }
 
     @Override

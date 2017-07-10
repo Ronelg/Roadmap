@@ -12,8 +12,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/road_maps_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:listitem="@layout/roadmap_card_item.xml" />
+            android:layout_height="match_parent" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_create_new_roadmap"
