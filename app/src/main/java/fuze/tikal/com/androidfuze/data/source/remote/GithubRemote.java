@@ -27,6 +27,9 @@ public class GithubRemote {
     public interface GitHub {
         @GET("/user/repos")
         Call<List<GithubRepository>> repos();
+
+        @GET("/user")
+        Call<GithubUser> user();
     }
 
     private static Retrofit.Builder builder =
