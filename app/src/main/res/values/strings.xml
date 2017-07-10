@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">AndroidFuze</string>
+    <string name="temp_roadmap_name">Temp RoadMap Name</string>
+  <string name="temp_roadmap_desc">Sheker sheker sheker</string>
+  <string name="temp_roadmap_state">PUBLISHED</string>
+    <string name="no_active_roadmaps">No Active RoadMaps</string>
 </resources>
