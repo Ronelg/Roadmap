@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="fuze.tikal.com.androidfuze.ui.home.HomeActivity">
+    android:layout_height="match_parent">
 
-
-  <FrameLayout
+  <android.support.design.widget.AppBarLayout
+      android:id="@+id/appbar"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:id="@+id/container">
+      android:layout_height="wrap_content"
+      android:fitsSystemWindows="true"
+      android:theme="@style/AppTheme.AppBarOverlay">
 
-  </FrameLayout>
+    <include layout="@layout/toolbar" />
 
-</FrameLayout>
+  </android.support.design.widget.AppBarLayout>
+
+  <!--<include layout="@layout/sensors_content"/>-->
+  <!--<FrameLayout-->
+  <!--android:id="@+id/fragmentContainer"-->
+  <!--android:layout_width="match_parent"-->
+  <!--android:layout_height="match_parent"-->
+  <!--android:layout_marginTop="?android:attr/actionBarSize">-->
+
+  <!--</FrameLayout>-->
+
+  <android.support.design.widget.TabLayout
+      android:id="@+id/tabs"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?attr/colorPrimary"
+      android:elevation="6dp"
+      android:layout_marginTop="?android:attr/actionBarSize">
+
+
+  </android.support.design.widget.TabLayout>
+
+  <android.support.v4.view.ViewPager
+      android:id="@+id/pager"
+      android:layout_below="@+id/tabs"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
+  </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

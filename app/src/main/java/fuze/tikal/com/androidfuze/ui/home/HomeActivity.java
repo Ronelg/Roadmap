@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import fuze.tikal.com.androidfuze.R;
 import fuze.tikal.com.androidfuze.utils.ActivityUtils;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements HomeContract.View{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,5 +21,15 @@ public class HomeActivity extends AppCompatActivity {
             ActivityUtils.addFragmentToActivity(
                 getSupportFragmentManager(), homeFragment, R.id.container);
         }
+    }
+
+    @Override
+    public void setPresenter(HomeContract.Presenter presenter) {
+
+    }
+
+    @Override
+    public void setProgressIndicator(boolean active) {
+
     }
 }
