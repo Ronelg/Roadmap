@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fuze.tikal.com.androidfuze.R;
@@ -24,7 +26,8 @@ import fuze.tikal.com.androidfuze.data.Roadmap;
 public class AuthorFragment extends Fragment implements
         AuthorContract.View,
         View.OnClickListener,
-        SwipeRefreshLayout.OnRefreshListener {
+        SwipeRefreshLayout.OnRefreshListener,
+        AuthorRoadMapAdapter.ClickListener {
 
     private static final String TAG = "AuthorFragment";
 
@@ -34,6 +37,8 @@ public class AuthorFragment extends Fragment implements
     private RecyclerView mRoadMapsList;
     private TextView mMessageText;
     private SwipeRefreshLayout mSwipeLayout;
+
+    private AuthorRoadMapAdapter mRoadMapAdapter;
 
     public static AuthorFragment newInstance() {
         return new AuthorFragment();
@@ -72,7 +77,8 @@ public class AuthorFragment extends Fragment implements
     @Override
     public void onRoadMapsLoaded(List<Roadmap> roadmapList) {
         if (roadmapList.size() > 0) {
-
+            mRoadMapAdapter = new AuthorRoadMapAdapter(new ArrayList<Roadmap>(0), this);
+            mRoadMapAdapter.notifyDataSetChanged();
         } else{
             mMessageText.setText(getString(R.string.no_active_roadmaps));
         }
@@ -90,5 +96,10 @@ public class AuthorFragment extends Fragment implements
     @Override
     public void onRefresh() {
         mPresenter.getRoadMaps();
+    }
+
+    @Override
+    public void onRoadMapClicked(Roadmap roadmap) {
+        Toast.makeText(getContext(), "RoadMap clicked", Toast.LENGTH_SHORT).show();
     }
 }
