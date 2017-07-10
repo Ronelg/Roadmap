@@ -3,4 +3,10 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
+
+
+  <color name="tutorFragColor">#9b59b6</color>
+  <color name="authorFragColor">#2ecc71</color>
+  <color name="studentFragColor">#3498db</color>
+
 </resources>

@@ -18,10 +18,13 @@ import fuze.tikal.com.androidfuze.data.source.remote.GithubRemote;
 import fuze.tikal.com.androidfuze.data.source.remote.GithubRepository;
 
 
-public class HomeFragment extends Fragment implements HomeContract.View {
+public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private Button loginButton;
     public Button reposBtn;
+//This fragment not in use as HomeActivity will be used as View!
+
+
     public static HomeFragment newInstance() {
         return new HomeFragment();
     }
@@ -69,15 +72,5 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         github.init(getActivity());
 
         return v;
-    }
-
-    @Override
-    public void setPresenter(HomeContract.Presenter presenter) {
-
-    }
-
-    @Override
-    public void setProgressIndicator(boolean active) {
-
     }
 }
